@@ -1,0 +1,67 @@
+
+
+.data-line-x,.data-line-y,.data-line {
+	stroke: steelblue;
+	stroke-width: 2;
+	fill: none;
+	stroke-dasharray: 0;
+}
+
+path {
+	stroke: #eee;
+	stroke-width: 2;
+	stroke-dasharray: 0;
+	fill: none;
+}
+
+.area {
+  	fill: lightsteelblue;
+}
+
+text {
+	font-family: Arial;
+	font-size: 8pt;
+	fill: #787878;
+}
+
+circle{
+	stroke: black;
+}
+
+line {
+	stroke: #CDCDCD;
+	stroke-width: 0.5;
+	/* stroke-dasharray: 3 3; */
+	fill: none;
+	/*stroke: black;*/
+}
+
+.data-point {
+	stroke-width: 2;
+	fill: #FFF;
+}
+
+.data-point-x,.data-line-x{
+	fill: #FFF;
+}
+
+.series0  circle, .series0  path{	stroke: blue  ;}
+.series1  circle, .series1  path{	stroke: green ;}
+.series2  circle, .series2  path{	stroke: red   ;}
+.series3  circle, .series3  path{	stroke: cyan  ;}
+.series4  circle, .series4  path{	stroke: gray ;}
+.series5  circle, .series5  path{	stroke: yellow;}
+.series6  circle, .series6  path{	stroke: darkblue  ;}
+.series7  circle, .series7  path{	stroke: darkgreen ;}
+.series8  circle, .series8  path{	stroke: darkred   ;}
+.series9  circle, .series9  path{	stroke: darkcyan  ;}
+.series10 circle, .series10 path{	stroke: darkgray ;}
+.series11 circle, .series11 path{	stroke: lightblue  ;}
+.series12 circle, .series12 path{	stroke: lightgreen ;}
+.series13 circle, .series13 path{	stroke: orange   ;}
+.series14 circle, .series14 path{	stroke: lightcyan  ;}
+.series15 circle, .series15 path{	stroke: lightgray ;}
+
+#chart {
+        margin: 0;
+}
