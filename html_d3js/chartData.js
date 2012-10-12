@@ -154,9 +154,10 @@ function dimension_options(parmset,results) {
 	
 	div.append("br");
 	div.append("select")
-		//.attr("size",function (d) {
-		//	pickers.push(this);
-		//	return d.values.length+3;} )
+		.attr("size",function (d) {
+			pickers.push(this);
+//			return d.values.length+3;} )
+			return 1;} )
 		.on("click",function (d,i) {
 			var idx=i;
 			var val=$(this).val();
@@ -171,6 +172,7 @@ function dimension_options(parmset,results) {
 			list.push("all");
 			list.push("mean");
 			list.push("dependent");		
+			//pickers.push(this);
 			return list;
 			})
 		.enter()

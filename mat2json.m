@@ -37,6 +37,8 @@ function obj2json(fid,x)
                 nan2json(fid,x);
             elseif isnumeric(x) && ~isreal(x)
                 complex2json(fid,x)
+            elseif isnumeric(x) && isinf(x)
+                inf2json(fid,x);
             elseif isnumeric(x)
                 num2json(fid,x);
             elseif islogical(x)
@@ -55,6 +57,14 @@ end
 
 function nan2json(fid,x)
     fprintf(fid,'"NaN"');
+end
+
+function inf2json(fid,x)
+    if x>0
+        fprintf(fid,'"+Infinity"');
+    else
+        fprintf(fid,'"-Infinity"');
+    end
 end
 
 function logical2json(fid,x)

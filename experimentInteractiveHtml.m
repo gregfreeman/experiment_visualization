@@ -1,18 +1,26 @@
-function [ html ] = experimentInteractiveHtml(experiment,varargin)
+function [ html ] = experimentInteractiveHtml(experiment,rootfolder,varargin)
 
 global RESULT_ROOT___
-rootfolder=RESULT_ROOT___;
+
+if ~exist('rootfolder','var') || isempty(rootfolder)
+    rootfolder=RESULT_ROOT___;
+end
+
 outputFolder=fullfile(rootfolder,experiment);
  
 disp('Loading Experiment')
-[results,paramset]=loadExperiment(experiment,varargin{:});
+[results,paramset]=loadExperiment(experiment,rootfolder,varargin{:});
 
 disp('Creating results.json')
 datafile=fullfile(outputFolder,'results.json');
-mat2json(datafile,results(:));
+if ~exist(datafile,'file')
+    mat2json(datafile,results(:));
+end
 disp('Creating paramset.json')
 datafile=fullfile(outputFolder,'paramset.json');
-mat2json(datafile,multivariateParameters(paramset));
+if ~exist(datafile,'file')
+    mat2json(datafile,multivariateParameters(paramset));
+end
 
 fullpath = mfilename('fullpath');
 idx      = find(fullpath == filesep);
